@@ -12,12 +12,12 @@ const InfoBox: React.FC<InfoBoxProps> = ({
   const [isSecure, setIsSecure] = useState(false);
 
   useEffect(() => {
-    // 外部リンクかどうかをチェック
+    // Check if the link is external
     const currentOrigin = window.location.origin;
     const linkOrigin = new URL(linkUrl).origin;
     setIsExternal(linkOrigin !== currentOrigin);
 
-    // HTTPSかどうかをチェック
+    // Check if the link uses HTTPS
     setIsSecure(linkUrl.startsWith('https://'));
   }, [linkUrl]);
 
@@ -25,8 +25,8 @@ const InfoBox: React.FC<InfoBoxProps> = ({
     e.preventDefault();
     
     if (isExternal) {
-      // 外部リンクの場合、確認ダイアログを表示
-      if (window.confirm('外部サイトに移動します。よろしいですか？')) {
+      // Show confirmation dialog for external links
+      if (window.confirm('You are about to visit an external site. Do you want to proceed?')) {
         window.open(linkUrl, '_blank', 'noopener,noreferrer');
       }
     } else {
@@ -59,7 +59,7 @@ const InfoBox: React.FC<InfoBoxProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         role="button"
-        aria-label={`${linkText} (${isExternal ? '外部リンク' : ''}${isSecure ? '、安全な接続' : ''})`}
+        aria-label={`${linkText} (${isExternal ? 'external link' : ''}${isSecure ? ', secure connection' : ''})`}
       >
         {linkText}
         {isExternal && (

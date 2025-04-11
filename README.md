@@ -35,35 +35,3 @@ npm start
 ```
 
 The development server will automatically open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Component Usage Example
-
-```tsx
-import InfoBox from './components/InfoBox/InfoBox';
-
-function App() {
-  return (
-    <InfoBox
-      title="Sample Title"
-      text="This is a sample text for demonstrating the InfoBox component."
-      linkText="Learn More"
-      linkUrl="https://example.com"
-    />
-  );
-}
-
-export default App;
-```
-
-## Building for Production
-
-To create a production build, run:
-```bash
-npm run build
-```
-
-The built files will be generated in the `build` directory.
-
-## License
-
-MIT
