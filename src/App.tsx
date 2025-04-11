@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import InfoBox from './components/InfoBox/InfoBox';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InfoBox
+        title="ICPSD"
+        text="The Istanbul International Centre for Private Sector in Development (ICPSD) supports the private sector and foundations to become transformative partners in development through research, advocacy for inclusive business, facilitation of public-private dialogue and multi stakeholder-partnerships."
+        linkText="Visit Website"
+        linkUrl="https://www.undp.org/policy-centre/istanbul"
+      />
     </div>
   );
 }
